@@ -1,0 +1,124 @@
+/* You can add global styles to this file, and also import other style files */
+
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+  border-color: #eae3e3;
+}
+.toggle-sidebar-rtl {
+  direction: rtl;
+}
+.toggle-sidebar-rtl .content-wrapper, .toggle-sidebar-rtl .main-footer {
+  margin-left: 0;
+  margin-right: 230px;
+}
+.toggle-sidebar-rtl .main-sidebar {
+  left: auto;
+}
+.toggle-sidebar-rtl .sidebar-menu li > a > .pull-right-container {
+  right: auto;
+  left: 10px;
+}
+.toggle-sidebar-rtl .breadcrumb[_ngcontent-c10] {
+  right: auto;
+  left: 10px;
+}
+.toggle-sidebar-rtl .user-panel pull-left {
+  float: right!important;
+  margin-right: 0px;
+  margin-left: -17px;
+}
+.toggle-sidebar-rtl .input-group-addon:first-child {
+  border: 1px solid #ccc;
+  border-left: 0;
+}
+.toggle-sidebar-rtl .main-header .navbar {
+  margin-left: 0;
+  margin-right: 230px;
+}
+.toggle-sidebar-rtl .main-header .logo {
+  float: right;
+}
+.toggle-sidebar-rtl .sidebar-right-toggle[_ngcontent-c1] {
+  float: left;
+}
+.toggle-sidebar-rtl .main-header .sidebar-toggle {
+  float: right;
+}
+.toggle-sidebar-rtl .main-header .navbar-custom-menu, .toggle-sidebar-rtl .main-header .navbar-right {
+  float: left;
+}
+.toggle-sidebar-rtl .navbar-nav>li {
+  float: right;
+}
+.toggle-sidebar-rtl .sidebar-menu li > a > .pull-right-container > .fa-angle-left {
+  transform: rotate(180deg);
+}
+.toggle-sidebar-rtl .main-header .navbar .nav > li > a > .label {
+  right: auto;
+  left: 7px;
+}
+.toggle-sidebar-rtl .skin-blue .sidebar-menu > li > a {
+  border-left: none;
+  border-right: 3px solid transparent;
+}
+.toggle-sidebar-rtl .sidebar-menu > li > a {
+  padding: 12px 15px 12px 5px;
+}
+.toggle-sidebar-rtl .pull-right {
+  float: left!important;
+}
+.toggle-sidebar-rtl th {
+  text-align: right;
+}
+.toggle-sidebar-rtl .close {
+  float: left;
+}
+.toggle-sidebar-rtl .pull-left {
+  float: right!important;
+}
+.toggle-sidebar-rtl .navbar-nav > .messages-menu > .dropdown-menu > li .menu > li > a > p, .toggle-sidebar-rtl .navbar-nav > .messages-menu > .dropdown-menu > li .menu > li > a > h4 {
+  margin: 0 45px 0 0;
+  text-align: right;
+
+}
+.toggle-sidebar-rtl .navbar-nav > .messages-menu > .dropdown-menu > li .menu > li > a > h4 > small {
+  left: 0; right: auto;
+}
+.toggle-sidebar-rtl .navbar-custom-menu > .navbar-nav > li > .dropdown-menu {
+  text-align: right;
+}
+.toggle-sidebar-rtl .control-sidebar.control-sidebar-open, .toggle-sidebar-rtl .control-sidebar.control-sidebar-open + .control-sidebar-bg {
+  right: auto;
+  left: 0;
+}
+.toggle-sidebar-rtl .navbar-custom-menu > .navbar-nav > li > .dropdown-menu {
+  position: absolute;
+  right: auto;
+  left: 0;
+}
+.toggle-sidebar-rtl .user-panel > .info {
+  padding: 5px 15px 5px 5px;
+  left: auto;
+  right: 55px;
+  top: 10px;
+}
+.toggle-sidebar-rtl .modal-footer .btn+.btn {
+  margin-bottom: 0;
+  margin-left: 5px;
+  float: left;
+}
+pre.language-typescript {
+  direction: ltr;
+}
+.modal-open .modal {
+  z-index: 9999;
+  padding-top: 12%;
+}
+.content-wrapper[_ngcontent-c4] {
+  position: relative;
+  z-index: 9999;
+}

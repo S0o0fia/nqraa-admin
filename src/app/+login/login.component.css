@@ -1,0 +1,258 @@
+@import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+@import url(https://fonts.googleapis.com/earlyaccess/amiri.css);
+
+.login-page{
+  background-image: url("../../assets/img/loginbackground.jpg") ;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
+.login-page {
+  overflow: hidden;
+  min-height: 50vh;
+}
+
+.login-box, .register-box {
+  opacity: 0.95;
+  width: 30%;
+  margin: 10% auto;
+}
+
+.login-box-body, .register-box-body {
+    background: #fff;
+    padding: 10%;
+    border-top: 0;
+    color: #666;
+    border-radius: 10px;
+}
+
+
+.login-form-title {
+  display: block;
+  font-family: 'Droid Arabic Kufi', serif;
+  font-size:x-large;
+  color: #333333;
+  line-height: 1.2;
+  text-align: center;
+  margin-bottom: 3%;
+ 
+}
+
+.login-box-body .form-group {
+  margin-bottom: 20px;
+}
+
+.login-box-body .form-group .form-control {
+  height: 40px;
+  
+}
+
+.login-box-body .form-group
+{
+  border-radius: 10px !important;
+}
+.login100-form-title {
+  font-family: Ubuntu-Bold;
+  font-size: 28px;
+  color: #fff;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 5%;
+  display: block;
+}
+
+  .login100-form {
+    width: 100%;
+    border-radius: 10px;
+    background-color: #fff;
+  }
+  
+.icon
+{
+  width: 100%;
+  height: 100%;
+}
+
+.form-group{
+  width: 100%;
+  position: relative;
+  border-bottom: 1px solid #981a1e;
+  padding:2% 0;
+
+}
+
+
+.form-control {
+  font-family: 'Droid Arabic Kufi', serif;
+  font-size: large;
+  color: #555555;
+  outline: transparent;
+  line-height: 1.2;
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 0;
+  background: transparent;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.form-control:focus {
+  right:  23px;
+  color: black;
+  outline: transparent;
+  border: 0;
+  padding-right: 60px;
+  outline: transparent;
+  border: 0;
+  width: 100%;
+
+ 
+}
+
+
+span{
+  color:#981a1e;
+ 
+  height: 2%;
+  margin-right: 2%;
+  font-size: medium;
+  transform: translateY(35px);
+  
+}
+.container-login100-form-btn
+{
+  width: 100%;
+  align-content: center;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+  justify-items: center;
+  align-self: center;
+  margin-left: 35%;
+}
+.btn
+{
+  font-family: 'Droid Arabic Kufi', serif;
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.2;
+  justify-content: center;
+  padding: 2%;
+  min-width:30%;
+  height: 5rem;
+  border-radius: 10%;
+  margin: auto;
+  margin-right: 35%;
+  background-image: linear-gradient(#b11f24, #981a1e);
+  align-items: center;
+  align-self: center;
+  align-content:  center;
+}
+
+.btn:hover {
+  background-image: linear-gradient(grey, lightgrey);
+}
+
+
+@media only screen and (max-width: 320px)
+{
+  .login-box{
+    width: 50%;
+    height: auto;
+    margin-top: 25%;
+  }
+ .login-form-title{
+   font-size: small;
+ }
+ .form-group{
+  
+   height: auto;
+ }
+  .btn{
+    font-size: small;
+    padding: 5%;
+    margin-right: 15%;
+    height: auto;
+  }
+  img{
+    width: 75%;
+  }
+  .form-control {
+    font-size: small;
+  }
+}
+
+  
+  @media only screen and (max-width: 768px)
+  {
+    .login-box{
+      width: 75%;
+      height: auto;
+      margin-top: 25%;
+    }
+   .login-form-title{
+     font-size: large;
+   }
+   .form-group{
+    
+     height: auto;
+   }
+    .btn{
+      font-size: medium;
+      padding: 2%;
+      height: auto;
+    }
+    span{
+      font-size: larger;
+    }
+    .form-control{
+      margin-left: 5%;
+      font-size: larger;
+    }
+    img{
+      width: 75%;
+    }
+    span{
+      font-size: larger;
+    }
+  }
+      
+
+  @media only screen and (min-width: 1024px)
+  {
+    .login-box{
+      width: 25%;
+      height: auto;
+      margin-top: 10%;
+    }
+   .login-form-title{
+     font-size: large;
+   }
+   .form-group{
+    
+     height: auto;
+   }
+    .btn{
+      font-size: large;
+   
+      padding:5%;
+      height: auto;
+    }
+    .form-control
+    {
+      margin-left: 10%;
+      font-size: large;
+    }
+    span{
+      font-size: large;
+    }
+    img{
+      width: 75%;
+    }
+  }

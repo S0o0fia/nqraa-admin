@@ -1,0 +1,244 @@
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<!-- Main content -->
+<section class="content">
+  <div class="box">
+      <div class="box-header">
+        <h3 class="box-title">جدول الكميات</h3>
+        <a data-toggle="modal" data-target="#quantities-modal">
+          <button class="btn btn-primary pull-right" id="btnAdd"> إضافة كمية </button>
+        </a>
+        
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body">
+        <table id="quantityDataTable" class="table direction table-table-striped">
+          <thead>
+          <tr>
+            <th> القسم الرئيسي</th>
+            <th>نوع الأعمال</th>
+            <th>القسم الفرعي</th>
+            <th>رقم العنصر</th>
+            <th>اسم العنصر</th>
+            <th>تاريخ بداية الأعمال</th>
+            <th>تاريخ نهاية الأعمال</th>
+            <th>وصف</th>
+            <th>الوحدة</th>
+            <th>الكمية التعاقدية</th>
+            <th>سعر الوحدة</th>
+            <th>السعر الكلي</th>
+            <th>التحكم</th>
+          </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let quantity of quantitiesList">
+                <td>{{quantity.main_section_name}}</td>
+                <td>{{quantity.first_subsection_name}}</td>
+                <td>{{quantity.second_subsection_name}}</td>
+                <td>{{quantity.item_number}}</td>
+                <td>{{quantity.item_name}}</td>
+                <td>{{quantity.session_from}}</td>
+                <td>{{quantity.session_to}}</td>
+                <td>{{quantity.description}}</td>
+                <td>{{quantity.product_uom_name}}</td>
+                <td>{{quantity.item_qty}}</td>
+                <td>{{quantity.price_unit}}</td>
+                <td>{{quantity.price_total}}</td>
+                <td>
+                  <div>
+                    <a data-toggle="tooltip" data-placement="top" title="Edit">
+                      <i class="fa fa-pencil" ></i>
+                    </a>&nbsp;&nbsp;
+                    <a data-toggle="tooltip" data-placement="top" title="Delete">
+                      <i class="fa fa-trash" ></i>
+                    </a>
+                  </div>
+                </td>
+              </tr>
+          </tbody>
+          <!-- <tfoot>
+          <tr>
+            <th>Rendering engine</th>
+            <th>Browser</th>
+            <th>Platform(s)</th>
+            <th>Engine version</th>
+            <th>CSS grade</th>
+          </tr>
+          </tfoot> -->
+        </table>
+      </div>
+      <!-- /.box-body -->
+    </div>
+</section>
+<!-- /Main content -->
+<div class="modal fade" id="inspection-modal">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <h4 class="modal-title">Add Request</h4>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Add Quantites -->
+<div class="modal fade" id="quantities-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="btnClose">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">أضافة</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" [formGroup]="quantityForm">
+          <div class="form-group">
+            <label class="col-sm-4 pull-left control-label">الخط الرئيسي</label>
+            <div class="col-sm-8 pull-right offset-2 selectWrapper">
+              <select [(ngModel)]="defaultMainOption" class="form-control select2 selectBox" formControlName="mainSection" (change)="onSelectMainSection($event.target.value)">
+                <option [value]=null  disabled>Please select Main section</option>
+                <!-- <option *ngFor="let s of this.mainSectionList; let m=s.id;">{{s.name}}</option> -->
+                <option *ngFor="let u of this.mainList; let j=index;" value={{u.id}}>
+                  <span *ngIf="u.parent_id==false">{{u.name}}</span>                
+                </option>
+              </select>
+              <div *ngIf="!quantityForm.controls.mainSection.valid && isValid" class="text-danger">
+                <div *ngIf="quantityForm.get('mainSection').errors.required">هذا الحقل مطلوب</div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-4 pull-left control-label">نوع الأعمال</label>
+            <div class="col-sm-8 pull-right offset-2 selectWrapper">
+              <select [(ngModel)]="firstSubSection" class="form-control select2 selectBox" formControlName="firstSubSection" (change)="onSelectFirstSubSection($event.target.value)">
+                <option [value]=null selected="selected" disabled>اختر نوع الأعمال</option>
+                <option *ngFor="let u of this.firstSubSectionList; let i=index;" value={{u.id}}>
+                  <span *ngIf="u.parent_id==this.selectedMainId">{{u.name}}</span>                
+                </option>
+              </select>
+              <div *ngIf="!quantityForm.controls.firstSubSection.valid && isValid" class="text-danger">
+                <div *ngIf="quantityForm.get('firstSubSection').errors.required">هذا الحقل مطلوب</div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-4 pull-left control-label">القسم الفرعي</label>
+            <div class="col-sm-8 pull-right offset-2 selectWrapper">
+              <select [(ngModel)]="secondSubSection" class="form-control select2 selectBox" formControlName="secondSubSection">
+                <option [value]=null selected="selected" disabled>اختر القسم الفرعي</option>
+                <option *ngFor="let u of this.secondSubSectionList; let s=index;">
+                  <span *ngIf="u.parent_id==this.selectedFirstSubId">{{u.name}}</span>                
+                </option>
+              </select>
+              <div *ngIf="!quantityForm.controls.secondSubSection.valid && isValid" class="text-danger">
+                <div *ngIf="quantityForm.get('secondSubSection').errors.required">هذا الحقل مطلوب</div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="orderNumber" class="col-sm-4 pull-left control-label order-md-1">الكمية التعاقدية</label>
+            <div class="col-sm-8 pull-right offset-2">
+              <input type="text" class="form-control order-md-3" id="orderNumber" placeholder="Item Number"
+                formControlName="itemNumber">
+              <div *ngIf="!quantityForm.controls.itemNumber.valid && isValid" class="text-danger">
+                <div *ngIf="quantityForm.get('itemNumber').errors.required">هذا الحقل مطلوب</div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="orderNumber" class="col-sm-4 pull-left control-label order-md-1">اسم الكمية</label>
+            <div class="col-sm-8 pull-right offset-2">
+              <input type="text" class="form-control order-md-3" id="orderNumber" placeholder="Item Name"
+                formControlName="itemName">
+              <div *ngIf="!quantityForm.controls.itemName.valid && isValid" class="text-danger">
+                <div *ngIf="quantityForm.get('itemName').errors.required">هذا الحقل مطلوب</div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label class="col-sm-4 control-label pull-left">تاريخ بداية الأعمال</label>
+            <div class="col-sm-8 pull-right offset-2">
+              <div class="input-group date">
+                <div class="input-group-addon">
+                  <i class="fa fa-calendar"></i>
+                </div>
+                <p-calendar  selectionMode="range" formControlName="session" [readonlyInput]="true"></p-calendar>
+              </div>
+              <div *ngIf="!quantityForm.controls.session.valid && isValid" class="text-danger">
+                <div *ngIf="quantityForm.get('session').errors.required">هذا الحقل مطلوب</div>
+              </div>
+            </div>
+          </div>
+  
+  
+          <div class="form-group">
+            <label for="orderNumber" class="col-sm-4 pull-left control-label order-md-1">وصف البند</label>
+            <div class="col-sm-8 pull-right offset-2">
+              <textarea type="text" class="form-control order-md-2" rows="4" id="orderNumber"
+                placeholder="Item Description" formControlName="itemDescription"></textarea>
+              <div *ngIf="!quantityForm.controls.itemDescription.valid && isValid" class="text-danger">
+                <div *ngIf="quantityForm.get('itemDescription').errors.required">هذا الحقل مطلوب</div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="orderNumber" class="col-sm-4 pull-left control-label order-md-1">الوحدة</label>
+            <div class="col-sm-8 pull-right offset-2 selectWrapper">
+              <!-- <input type="text" class="form-control order-md-3" id="orderNumber" placeholder="Unit"
+                formControlName="unit"> -->
+              <select [(ngModel)]="defaultUnit" class="form-control select2 selectBox" formControlName="unit">
+                <option [value]=null selected="selected" disabled>Please select Unit</option>
+                <option *ngFor="let u of this.unitList; let m=index;">{{u.name}}</option>
+              </select>
+              <div *ngIf="!quantityForm.controls.unit.valid && isValid" class="text-danger">
+                <div *ngIf="quantityForm.get('unit').errors.required">هذا الحقل مطلوب</div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="orderNumber" class="col-sm-4 pull-left control-label order-md-1">عدد العقود</label>
+            <div class="col-sm-8 pull-right offset-2">
+              <input type="text" class="form-control order-md-3" id="orderNumber" placeholder="Quantity of the contract"
+                formControlName="contractQuantity">
+              <div *ngIf="!quantityForm.controls.contractQuantity.valid && isValid" class="text-danger">
+                <div *ngIf="quantityForm.get('contractQuantity').errors.required">هذا الحقل مطلوب
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="orderNumber" class="col-sm-4 pull-left control-label order-md-1">سعر الوحدة الإفاردي</label>
+            <div class="col-sm-8 pull-right offset-2">
+              <input type="text" class="form-control order-md-3" id="orderNumber" placeholder="Unit Price"
+                formControlName="unitPrice" (ngModelChange)="valuechange($event)">
+              <div *ngIf="!quantityForm.controls.unitPrice.valid && isValid" class="text-danger">
+                <div *ngIf="quantityForm.get('unitPrice').errors.required">هذا الحقل مطلوب</div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="orderNumber" class="col-sm-4 pull-left control-label order-md-1">السعو الإجمالي</label>
+            <div class="col-sm-8 pull-right offset-2">
+              <input type="text" class="form-control order-md-3" id="orderNumber" placeholder="Total Price"
+                formControlName="totalPrice" disabled="disabled" [(ngModel)]="this.tPrice">
+              <div *ngIf="!quantityForm.controls.totalPrice.valid && isValid" class="text-danger">
+                <div *ngIf="quantityForm.get('totalPrice').errors.required">هذا الحقل مطلوب</div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger pull-right"  data-dismiss="modal">إغلاق</button>
+        <button type="button" class="btn btn-success pull-left" (click)="onAddTableQuantityClick()">إضافة</button>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- Add Quantites End -->

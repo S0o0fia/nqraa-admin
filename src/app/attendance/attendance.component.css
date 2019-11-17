@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css?family=Changa&display=swap');
+
+*{
+  font-family: 'Changa', sans-serif;
+}
+.modal-header {
+    background-color: #00A65A;
+    text-align: center;
+}
+.form-horizontal .control-label{
+    text-align: left !important;
+}
+.modal-title
+{
+      color: white;
+      font-size: medium;
+      font-family: 'Changa', sans-serif;
+}
+.box-header
+{
+   width: 100%;
+   align-self: center;
+   text-align: center;
+}
+
+.box-title
+{
+    margin: auto;
+    font-size: x-large;
+    font-family: 'Changa', sans-serif;
+    
+}
+
+#btnAdd
+{
+  
+    background-color: #00A65A;
+    color: white; 
+}
+
+
+input 
+{
+    outline: none;
+    border: none;
+    display: block;
+    width: 100%;
+    background: #f5f7f5;
+    font-size: medium;
+    line-height: 1.5;
+    color: black;
+    padding: 3%;
+    border-radius: 15px 50px; 
+    
+}
+
+p-calendar
+{
+    outline: none;
+    border: none;
+    display: block;
+    width: 100%;
+    background: #f5f7f5;
+    font-size: medium;
+    line-height: 2;
+    color: black;
+    padding: 5%;
+    border-radius: 15px 50px; 
+    
+}
+
+input::-webkit-input-placeholder { color: #999999; }
+input:-moz-placeholder { color: #999999; }
+input::-moz-placeholder { color: #999999; }
+input:-ms-input-placeholder { color: #999999; }
+
+.form-group
+{
+    margin:2%;
+
+}
+
+label{
+    font-size: medium;
+}
+
+.selectWrapper{
+  padding: 0.25%;
+  border-radius: 15px 50px; 
+  display:inline-block;
+  overflow:hidden;
+  background:#f5f7f5;
+  border:1px solid #f5f7f5;
+}
+.selectBox{
+  
+
+  border:0px;
+  outline:none;
+  background-color: transparent;
+}
+
+@media
+only screen and (max-width: 1000px) {
+  table,  tbody , thead, th, td, tr {
+    display: block;
+    text-align: center;
+  }
+  thead tr {
+    position: absolute;
+    top: 9999px;
+    right: 9999px;
+  }
+  tr { border: 1px solid #ccc; }
+  td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-right: 200px;
+    margin-right: 150px;
+    text-align: center;
+  }
+  td:before {
+    position: absolute;
+    top: 12px;
+    right: 6px;
+    width: 200px;
+    padding-left: 40px;
+    white-space: nowrap;
+    margin-right: -130px;
+  }
+
+  td:nth-of-type(1):before { content: "رقم البند"; }
+  td:nth-of-type(2):before { content: "اسم المشروع"; }
+  td:nth-of-type(3):before { content: "اسم الاستشاري"; }
+  td:nth-of-type(4):before { content: "اسم المقاول";}
+  td:nth-of-type(5):before { content: "الحالة"; }
+ 
+}
+
+th{
+    text-align: center;
+    color: white;
+    font-family:  'Changa', sans-serif; 
+}
+td{
+    text-align: center; 
+}
+
+
+#Cancel
+{
+    background-color: red;
+    color: white;
+    font-size: medium;
+   float: left;
+   padding: 3%;
+   
+   border-radius: 15px 50px; 
+   
+    
+}
+
+
+#Save
+{
+    background-color: #00a65a;
+    color: white;
+    font-size: medium;
+    padding: 3%;
+   border-radius:  50px 15px; 
+   
+    
+}
+
+
+@media only screen and (max-width: 375px){
+     tr{
+          padding :0;
+      }
+      td{
+         font-size:small;
+      }
+      #btnAdd
+      {
+          margin-left:35%;
+          margin-top: 5%;
+      }
+  }
+ 
+ 
+      
+
+      

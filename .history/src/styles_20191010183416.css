@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+  border-color: #eae3e3;
+}
+.toggle-sidebar-rtl {
+  direction: rtl;
+}
+.toggle-sidebar-rtl .content-wrapper, .toggle-sidebar-rtl .main-footer {
+  margin-left: 0;
+  margin-right: 230px;
+}
+.toggle-sidebar-rtl .main-sidebar {
+  left: auto;
+}
+.toggle-sidebar-rtl .sidebar-menu li > a > .pull-right-container {
+  right: auto;
+  left: 10px;
+}
+.toggle-sidebar-rtl .breadcrumb[_ngcontent-c10] {
+  right: auto;
+  left: 10px;
+}
+.toggle-sidebar-rtl .user-panel pull-left {
+  float: right!important;
+  margin-right: 0px;
+  margin-left: -17px;
+}
+.toggle-sidebar-rtl .input-group-addon:first-child {
+  border: 1px solid #ccc;
+  border-left: 0;
+}
+.toggle-sidebar-rtl .main-header .navbar {
+  margin-left: 0;
+  margin-right: 230px;
+}
+.toggle-sidebar-rtl .main-header .logo {
+  float: right;
+}
+.toggle-sidebar-rtl .sidebar-right-toggle[_ngcontent-c1] {
+  float: left;
+}
+.toggle-sidebar-rtl .main-header .sidebar-toggle {
+  float: right;
+}
+.toggle-sidebar-rtl .main-header .navbar-custom-menu, .toggle-sidebar-rtl .main-header .navbar-right {
+  float: left;
+}
+.toggle-sidebar-rtl .navbar-nav>li {
+  float: right;
+}

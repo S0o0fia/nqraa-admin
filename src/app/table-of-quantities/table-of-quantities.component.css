@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css?family=Changa&display=swap');
+
+*{
+  font-family: 'Changa', sans-serif;
+}
+.modal-header {
+    background-color: #981a1e;
+    text-align: center;
+}
+.form-horizontal .control-label{
+    text-align: left !important;
+}
+.modal-title
+{
+      color: white;
+      font-size: medium;
+      font-family: 'Changa', sans-serif;
+}
+.box-header
+{
+   width: 100%;
+   align-self: center;
+   text-align: center;
+}
+
+.box-title
+{
+    margin: auto;
+    font-size: x-large;
+    font-family: 'Changa', sans-serif;
+    
+}
+
+#btnAdd
+{
+  
+    background-color: #981a1e;
+    color: white; 
+}
+
+
+input 
+{
+    outline: none;
+    border: none;
+    display: block;
+    width: 100%;
+    background: #f5f7f5;
+    font-size: medium;
+    line-height: 1.5;
+    color: black;
+    padding: 3%;
+    border-radius: 15px 50px; 
+    
+}
+input::-webkit-input-placeholder { color: #999999; }
+input:-moz-placeholder { color: #999999; }
+input::-moz-placeholder { color: #999999; }
+input:-ms-input-placeholder { color: #999999; }
+
+.form-group
+{
+    margin:2%;
+
+}
+
+label{
+    font-size: medium;
+}
+
+.selectWrapper{
+  padding: 0.25%;
+  border-radius: 15px 50px; 
+  display:inline-block;
+  overflow:hidden;
+  background:#f5f7f5;
+  border:1px solid #f5f7f5;
+}
+.selectBox  {
+
+  border:0px;
+  outline:none;
+  background-color: transparent;
+}
+
+ input-group date{
+  outline: none;
+  border: none;
+  display: block;
+  width: 100%;
+  background: #f5f7f5;
+  font-size: medium;
+  line-height: 1.5;
+  color: black;
+  border-radius: 15px 50px; 
+    
+}
+@media
+only screen and (max-width: 1500px) {
+  table,  tbody , thead, th, td, tr {
+    display: block;
+    text-align: center;
+  }
+  thead tr {
+    position: absolute;
+    top: 9999px;
+    right: 9999px;
+  }
+  tr { border: 1px solid #ccc; }
+  td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-right: 200px;
+    margin-right: 150px;
+    text-align: center;
+  }
+  td:before {
+    position: absolute;
+    top: 12px;
+    right: 6px;
+    width: 200px;
+    padding-left: 40px;
+    white-space: nowrap;
+    margin-right: -130px;
+  }
+
+  td:nth-of-type(1):before { content: "لقسم الرئيسي"; }
+  td:nth-of-type(2):before { content: "نوع الأعمال"; }
+  td:nth-of-type(3):before { content: "القسم الفرعي"; }
+  td:nth-of-type(4):before { content: "رقم العنصر";}
+  td:nth-of-type(5):before { content: "اسم العنصر"; }
+  td:nth-of-type(6):before { content: "تاريخ بداية الأعمال"; }
+  td:nth-of-type(7):before { content: "تاريخ نهاية الأعمال"; }
+  td:nth-of-type(8):before { content: "وصف"; }
+  td:nth-of-type(9):before { content: "الوحدة"; }
+  td:nth-of-type(10):before { content: "الكمية التعاقدية"; }
+  td:nth-of-type(11):before { content: "سعر الوحدة"; }
+  td:nth-of-type(12):before { content: "السعر الكلي"; }
+
+}
+
+
+
+th{
+    text-align: center;
+    color: white;
+    font-family:  'Changa', sans-serif; 
+}
+td{
+    text-align: center; 
+}
+
+
+#Cancel
+{
+    background-color: red;
+    color: white;
+    font-size: medium;
+   float: left;
+   padding: 3%;
+   
+   border-radius: 15px 50px; 
+   
+    
+}
+
+
+#Save
+{
+    background-color: #00a65a;
+    color: white;
+    font-size: medium;
+    padding: 3%;
+   border-radius:  50px 15px; 
+   
+    
+}
+
+.fa{
+  color:#981a1e;
+}
+@media only screen and (max-width: 375px){
+     tr{
+          padding :0;
+      }
+      td{
+         font-size:small;
+      }
+      #btnAdd
+      {
+          margin-left: 30%;
+          margin-top: 2%;
+      }
+  }
+ 
+ 
+  tr:nth-of-type(even):hover
+{
+  background-color: lightsteelblue;
+  width: 100%;
+}
+
+tr:nth-of-type(odd):hover
+{
+  background-color: lightsteelblue;
+}
+
+i:hover
+{
+    color: red;
+}    
+
+      

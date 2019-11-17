@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css?family=Changa&display=swap');
+
+*{
+  font-family: 'Changa', sans-serif;
+  font-weight: bold;
+}
+.header
+{
+   align-items: center;
+   text-align: center; 
+ 
+}
+h3{
+    font-family: 'Changa', sans-serif;
+}
+
+
+.box-header
+{
+   width: 100%;
+   align-self: center;
+   text-align: center;
+}
+
+.box-title
+{
+    margin: auto;
+    font-size: x-large;
+    font-family: 'Changa', sans-serif;
+    
+}
+ul{
+  width: 100%;
+
+}
+
+li{
+  width: 25%;
+  left:1.5%;
+  font-family: 'Changa', sans-serif;
+  
+}
+li:focus 
+{
+  background-color: #00A65A;
+  color: white;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+  background-color: #00A65A;
+  color: white;
+}
+a{
+  color:#00A65A;
+  font-weight: bold;
+  
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 20px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 17px;
+  width: 17px;
+  left: 1px;
+  bottom: 1.5px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #00A65A;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #00A65A;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(10px);
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+tr{
+  width: 100%;
+  padding: 2%;
+
+}
+th{
+  padding: 2%;
+  text-align: center;
+  color: #00A65A;
+  font-size: larger;
+}
+
+td{
+  width: 20%;
+  text-align: center;
+  padding: 2%;
+  margin: auto;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  font-size: small;
+}
+span{
+  font-weight: normal;
+  font-size: small;
+}
+
+.progress-bar
+{
+  background-color: #00A65A;
+  float: right;
+}
+.progress
+{
+  background-color: lightgray;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+progress.rtl {
+  direction: rtl;
+  
+}
+@media
+only screen and (max-width: 1000px) {
+
+  table,  tbody , thead, th, td, tr {
+    display: block;
+    text-align: center;
+  }
+  thead tr {
+    position: absolute;
+    top: 9999px;
+    
+  }
+  span{
+    margin-right: 2%;
+  }
+  .switch
+  {
+    margin-left: 2%;
+  }
+ 
+  tr { border: 1px solid #ccc; }
+  td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    width: 100%;
+    border: lightgray 1px solid;
+    text-align: center;
+  }
+  td:before {
+    position: absolute;
+    top: 12px;
+    right: 6px;
+    width: 200px;
+    padding-left: 40px;
+    white-space: nowrap;
+    margin-right: -130px;
+  }
+}
+
+
+
+@media only screen and (max-width: 375px){
+  .s3{
+    transform: translateX(15px);
+   }
+   .s1{
+    transform: translateX(3px);
+   }
+   li{
+     left: 15%;
+     
+   }
+   .nav>li>a{ 
+    font-size: smaller;
+    text-align: center;
+    right: 3%;
+    padding:1px 0 15px 0 ;
+    margin-right:0;
+   }
+   textarea{
+     width:100%;
+     background-color: lightgray;
+   }
+   .btn
+   {
+     margin-right: 25%;
+   }
+   .send 
+   {
+    border: none;
+   }
+   tr
+   {
+     border: none;
+   }
+}
+      
+
+@media only screen and (max-width: 768px){
+  .s3{
+    transform: translateX(15px);
+   }
+   .s1{
+    transform: translateX(3px);
+   }
+   li{
+     left: 15%;
+     
+   }
+   .nav>li>a{ 
+    font-size: smaller;
+    text-align: center;
+    right: 3%;
+    padding:1px 0 15px 0 ;
+    margin-right:0;
+   }
+   textarea{
+     width:100%;
+     background-color: lightgray;
+   }
+   .btn
+   {
+     margin-right: 25%;
+   }
+   .send 
+   {
+    border: none;
+   }
+    tr
+   {
+     border: none;
+   }
+   td{
+    border: none;
+   }
+}
+      
+
+
+      

@@ -1,0 +1,229 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<div class="header">
+<h2>إضافة مشروع جديد</h2>
+</div>
+<!-- Main content -->
+<section class="content">
+  <!-- Main row -->
+  <div class="row">
+    <!-- Left col -->
+    <div class="col-md-7">
+        <!-- MAP & BOX PANE -->
+        <div class="box box-danger">
+          <div class="box-header with-border">
+            <h3 class="box-title">تفاصيل المشروع</h3>
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+              <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+            </div>
+          </div>
+          
+            <div class="box-body with-border">
+              <form class="form-horizontal" [formGroup]="projectForm">
+                <div class="form-group">
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control order-md-2" id="projectName" placeholder="اسم المشروع"
+                      formControlName="projectName">
+                    <div *ngIf="!projectForm.controls.projectName.valid && isValid" class="text-danger">
+                      <div *ngIf="projectForm.get('projectName').errors.required">اسم المشروع حقل مطلوب</div>
+                    </div>
+                  </div>
+                  <label for="projectName" class="col-sm-2 control-label order-md-1">اسم المشروع</label>
+                 </div>
+
+                <div class="form-group">
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="contractNumber" placeholder="رقم العقد" formControlName="contractNumber">
+                    <div *ngIf="!projectForm.controls.contractNumber.valid && isValid" class="text-danger">
+                        <div *ngIf="projectForm.get('contractNumber').errors.required">رقم العقد حخقل مطلوب</div>
+                      </div>
+                  </div>
+                  <label for="contractNumber" class="col-sm-2 control-label">رقم العقد</label>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-sm-10 selectWrapper">
+                    <select class="form-control select2 selectBox" formControlName="consultant">
+                      <option [value]="" selected="selected">اختر اسم الاستشاري</option>
+                     <option *ngFor="let u of this.consultantList; let j=index;">{{u.name}}</option>
+                    </select>
+                    <div *ngIf="!projectForm.controls.consultant.valid && isValid" class="text-danger">
+                        <div *ngIf="projectForm.get('consultant').errors.required">اسم الاستشاري مطلوب</div>
+                      </div>
+                  </div>
+                  <label class="col-sm-2 control-label">اسم الاستشاري</label>
+                 </div>
+                
+                 <div class="form-group">
+                  <div class="col-sm-10 selectWrapper">
+                    <select class="form-control select2 selectBox" formControlName="contractor">
+                      <option selected="selected">اختر اسم المقاول</option>
+                      <option *ngFor="let u of this.contractorList; let j=index;">{{u.name}}</option>
+                    </select>
+                    <div *ngIf="!projectForm.controls.consultant.valid && isValid" class="text-danger">
+                        <div *ngIf="projectForm.get('consultant').errors.required">اسم المقاول مطلوب</div>
+                      </div>
+                  </div>
+                  <label class="col-sm-2 control-label">اسم المقاول</label>
+                </div>
+                
+                <div class="form-group">
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputEmail3" placeholder="قيمة المشروع" formControlName="">
+                    <div *ngIf="!projectForm.controls.projectValue.valid && isValid" class="text-danger">
+                        <div *ngIf="projectForm.get('projectValue').errors.required">قيمة المشروع حقل مطلوب</div>
+                      </div>
+                  </div>
+                  <label for="inputEmail3" class="col-sm-2 control-label">قيمة المشروع</label>
+            
+        
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="firstBatch" placeholder="الدفعة الأولى" formControlName="projectValue">
+                  </div>
+                  <label for="firstBatch" class="col-sm-2 control-label">الدفعة الأولى</label>
+                </div>
+            
+                <div class="form-group">
+                  <div class="col-sm-10">
+                    <div class="input-group date">
+                     
+                      <div class="input-group-addon">
+                          <i class="fa fa-calendar" aria-hidden="true" ></i>
+                      </div>
+                      <input type="text" class="form-control pull-right" id="datepicker" formControlName="date" [(ngModel)]="fromDate" placeholder="اختر التاريخ">            
+                    </div>
+                    <div *ngIf="!projectForm.controls.date.valid && isValid" class="text-danger">
+                        <div *ngIf="projectForm.get('date').errors.required">بداية المشروع حقل مطلوب</div>
+                      </div>
+                  </div>
+                  <label class="col-sm-2 control-label">بداية المشروع</label>
+                 </div>
+            
+                 <div class="form-group">
+                  <div class="col-sm-10 ">
+                    <input type="text" class="form-control" id="inputPassword3" placeholder="مدة المشروع" formControlName="projectDuration">
+                    <div *ngIf="!projectForm.controls.projectDuration.valid && isValid" class="text-danger">
+                        <div *ngIf="projectForm.get('projectDuration').errors.required">مدة المشروع حقل مطلوب</div>
+                      </div>
+                  </div>
+                  <label for="projectDuration" class="col-sm-2 control-label">مدة المشروع</label>
+                </div>
+            
+                <div class="form-group">
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputPassword3" placeholder="سنة الميزانية" formControlName="budgetYear">
+                    <div *ngIf="!projectForm.controls.budgetYear.valid && isValid" class="text-danger">
+                        <div *ngIf="projectForm.get('budgetYear').errors.required">سنة الميزانية حقل مطلوب</div>
+                      </div>
+                  </div>
+                  <label for="budgetYear" class="col-sm-2 control-label">سنة الميزانية</label>
+                </div>
+            
+                <div class="form-group">
+                  <div class="col-sm-10 selectWrapper">
+                    <select class="form-control select2  selectBox" formControlName="ضمن مشروع">
+                      <option selected="selected">Select اختر المشروع</option>
+                      <!-- <option>Independent Project</option>
+                      <option>Single Project</option> -->
+                      <option *ngFor="let p of this.projectsList; let i=index;">{{p.name}}</option>
+                    </select>
+                    <div *ngIf="!projectForm.controls.parentProject.valid && isValid" class="text-danger">
+                      <div *ngIf="projectForm.get('parentProject').errors.required">هذا الحقل مطلوب</div>
+                    </div>
+                  </div>
+                  <label class="col-sm-2 control-label">ضمن مشروع</label>
+               </div>
+              
+               <div class="form-group">
+                  <div class="col-sm-10 selectWrapper">
+                    <select class="form-control select2 selectBox" formControlName="حالة المشروع">
+                      <option selected="selected">اختر حالة المشروع</option>
+                      <option>Active</option>
+                      <option>In-Active</option>
+                    </select>
+                    <div *ngIf="!projectForm.controls.projectStatus.valid && isValid" class="text-danger">
+                        <div *ngIf="projectForm.get('projectStatus').errors.required">هذا لالحقل مطلوب</div>
+                      </div>
+                  </div>
+                  <label class="col-sm-2 control-label">حالة المشروع</label>
+                </div>
+              
+                <div class="form-group">
+                  <div class="box-body pad">
+                      <div class="col-sm-10">
+                          <ck-editor name="editor1" [(ngModel)]="editorValue" skin="moono-lisa" language="ar" formControlName="تفاصيل المشروع"></ck-editor>
+                      </div>
+                    
+                  </div>
+                  <label class="col-sm-2 control-label">تفاصيل المشروع</label>
+                </div>
+              </form>
+            
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+              <button type="submit" class="btn btn-success pull-left" (click)="onCreateProjectClick()" id="Save">حفظ</button>
+              <button type="submit" class="btn btn-danger pull-right " id="Cancel">إالغاء</button>
+              
+            </div>
+            <!-- /.box-footer -->
+        </div>
+      </div>
+    <!-- Right col -->
+    <div class="col-md-5">
+        <!-- MAP & BOX PANE -->
+        <div class="box box-danger">
+          <div class="box-header with-border">
+            <h3 class="box-title">موقع المشروع</h3>
+             
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+              <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+            </div>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body no-padding">
+            <div class="row">
+              <div class="col-md-9 col-sm-8">
+                <div class="pad">
+                 
+                </div>
+               </div>
+               <div class="formlocation">
+                  <table class="table">
+                   <tbody>
+
+                     <tr scope="row">
+                       <td>
+                          <button type="submit" class="btn btn-success pull-left"  id="SaveLocation">موقعي</button>
+                       </td>
+                       <td scope="col" >
+                         
+                         <input name="lat" class="form-control loaction" placeholder="خط الطول" />
+                       </td>
+                       <td scope="col" >
+                         
+                          <input name="lang" class="form-control " placeholder="خط العرض" />
+                       </td>
+                       
+                     </tr>
+                   </tbody>
+                  </table>
+                  
+                        
+                </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <!-- /.row -->
+</section>

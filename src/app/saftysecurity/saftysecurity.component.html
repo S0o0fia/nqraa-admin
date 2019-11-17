@@ -1,0 +1,185 @@
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+<!-- Main content -->
+<!-- Tab links -->
+<section class="content">
+    <div class="box">
+        <div class="box-header">
+<ul class="nav nav-tabs side_nav" role="tablist">
+    <li *ngFor="let wallet of coinwallet; let first = first;" [ngClass]="{firstItem: first}" role="presentation" class="accounts_li" [class.active]="selectedwallet===wallet">
+      <a  class="tab" (click)="selectedwallet = wallet" aria-controls="one" role="tab" data-toggle="tab">{{wallet}}</a>
+    </li>
+  </ul>
+  
+  <div class="tab-content">
+   
+    <div *ngIf="selectedwallet === coinwallet[3]" role="tabpanel" class="tab-pane active" id="four">
+        <table class="blueTable">
+            <thead>
+            <tr style="border-bottom: 0.5px solid lightgray;">
+            <th>اللوحات</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            </thead>
+            <tbody>
+            <tr style="border-bottom: 0.5px solid lightgray;" *ngFor="let data of RowsforData4">
+              <td class="data" style="border-left: 0.5px solid lightgray; border-right: 0.5px solid lightgray;">{{data}}</td>
+              <td>
+              <label class="switch s1">
+              <input type="checkbox">
+              <span class="slider round "></span>
+              </label>
+              &nbsp;
+              <span class="title">غير مقبول</span>
+             </td>
+              <td>
+               <label class="switch s2">
+                  <input type="checkbox">
+                   <span class="slider round "></span>
+              </label>
+              &nbsp; 
+                <span class="title"> يحتاج لتعديل</span>
+              </td>
+              <td style="border-left: 0.5px solid lightgray;"> 
+               <label class="switch s3">
+               <input type="checkbox" >
+                 <span class="slider round "></span>
+             </label>
+             &nbsp;
+              <span class="title">مقبول</span>
+                </td>
+            </tr>
+           </tbody>
+            </table>
+   </div>
+    <div *ngIf="selectedwallet === coinwallet[2]" role="tabpanel" class="tab-pane active" id="three">
+        <table class="blueTable">
+            <thead>
+            <tr style="border-bottom: 0.5px solid lightgray;">
+            <th>الموقع</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            </thead>
+            <tbody>
+            <tr style="border-bottom: 0.5px solid lightgray;" *ngFor="let data of RowsforData3">
+              <td class="data" style="border-left: 0.5px solid lightgray; border-right: 0.5px solid lightgray;">{{data}}</td>
+              <td>
+              <label class="switch s1">
+              <input type="checkbox">
+              <span class="slider round "></span>
+              </label>
+              &nbsp;
+              <span class="title">غير مقبول</span>
+             </td>
+              <td>
+               <label class="switch s2">
+                  <input type="checkbox">
+                   <span class="slider round "></span>
+              </label>
+              &nbsp; 
+                <span class="title"> يحتاج لتعديل</span>
+              </td>
+              <td style="border-left: 0.5px solid lightgray;"> 
+               <label class="switch s3">
+               <input type="checkbox" >
+                 <span class="slider round "></span>
+             </label>
+             &nbsp;
+              <span class="title">مقبول</span>
+                </td>
+            </tr>
+            </tbody>
+            </table>
+    </div>
+
+    <div *ngIf="selectedwallet === coinwallet[1]" role="tabpanel" class="tab-pane active" id="two">
+        <table class="blueTable">
+            <thead>
+            <tr style="border-bottom: 0.5px solid lightgray;">
+            <th>العمال</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            </thead>
+            <tbody>
+            <tr style="border-bottom: 0.5px solid lightgray;" *ngFor="let data of RowsforData2">
+              <td class="data" style="border-left: 0.5px solid lightgray; border-right: 0.5px solid lightgray;">{{data}}</td>
+              <td>
+              <label class="switch s1">
+              <input type="checkbox">
+              <span class="slider round "></span>
+              </label>
+              &nbsp;
+              <span class="title">غير مقبول</span>
+             </td>
+              <td>
+               <label class="switch s2">
+                  <input type="checkbox">
+                   <span class="slider round "></span>
+              </label>
+              &nbsp; 
+                <span class="title"> يحتاج لتعديل</span>
+              </td>
+              <td style="border-left: 0.5px solid lightgray;"> 
+               <label class="switch s3">
+               <input type="checkbox" >
+                 <span class="slider round "></span>
+             </label>
+             &nbsp;
+              <span class="title">مقبول</span>
+                </td>
+            </tr>
+            </tbody>
+            </table>
+    </div>
+    <div *ngIf="selectedwallet === coinwallet[0]" role="tabpanel" class="tab-pane active" id="one">
+        <table class="blueTable">
+            <thead>
+            <tr style="border-bottom: 0.5px solid lightgray;">
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            </thead>
+            <tbody>
+             <tr style="border-bottom: 0.5px solid lightgray;">
+               <td colspan="2" style="border-left: 0.5px solid lightgray; border-right: 0.5px solid lightgray;"> التقييم الكلي </td>
+               <td colspan="9" style="border-left: 0.5px solid">
+                  <div class="progress">
+                      <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width:30%; transform: scaleX(1px);">
+                       30%
+                      </div>
+                    </div>  
+               </td>
+             </tr>
+             <tr style="border-bottom: 0.5px solid lightgray; border-right: 0.5px solid lightgray;">
+                <td colspan="2" style="border-left: 0.5px solid lightgray;"> الملاحظات </td>
+                <td colspan="9" style="border-left: 0.5px solid">
+                    <textarea rows="5" cols="120" placeholder="الملاحظات">
+                   </textarea>
+                    
+                </td>
+                <tr class="send" style="border-bottom: 0.5px solid lightgray; border-right: 0.5px solid lightgray;">
+                    <td    class="send"colspan="2" style="border-left: 0.5px solid lightgray;"> </td>
+                    <td class="send" colspan="9" style="border-left: 0.5px solid">
+                       <button class="btn btn-success pull-left"> إرسال التقرير</button>
+                    </td>
+              </tr>
+            </tbody>
+            </table>
+    </div>
+     </div>
+        </div>
+    </div>
+</section>

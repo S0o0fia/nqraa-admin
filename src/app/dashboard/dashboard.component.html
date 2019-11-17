@@ -1,0 +1,166 @@
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  
+  </head>
+     <body>
+         <!-- Main content -->
+    <section class="content">
+         
+        <!-- First Section : The Cards added  in 22/10/2019 -->
+        <!--Begin-->
+        <div class="container">
+        <div class="row">
+          <!--First Card-->
+          <div class="col-md-3 col-ms-3 col-sm-3 col-xs-3  card " style="background-color:#00a65be9;">
+              <div class="card-body text-center">
+            <div class="row">
+              <div class="col-md-12 ">
+              <p class="card-text fa fa-truck">  تم التسليم النهائي</p>
+            </div>
+            <div class="col-md-12 " style="background-color:white;  border: 1px solid #00a65be9;  border-radius: 2%; box-shadow:1px 1px black;" >
+              <h2  class="show">  عرض المشاريع &larr;</h2>
+               <div class="col-md-12 ">
+            </div>
+          </div>
+        </div>
+        </div>
+          </div>
+          <!--Seconed Card-->
+          <div class="col-md-3 col-ms-3 col-sm-3 col-xs-3  card " style="background-color:rgba(221, 235, 17, 0.8);">
+              <div class="card-body text-center">
+            <div class="row">
+              <div class="col-md-12 ">
+              <p class="card-text fa fa-truck">  تم التسليم الابتدائي</p>
+            </div>
+            <div class="col-md-12 " style="background-color:white;  border: 1px solid rgba(221, 235, 17, 0.8);  border-radius: 2%; box-shadow:1px 1px black;" >
+              <h2 class="show">  عرض المشاريع &larr;</h2>
+               <div class="col-md-12 ">
+            </div>
+          </div>
+        </div>
+        </div>
+          </div>
+        <!--Thied Card-->
+        <div class="col-md-3 col-ms-3 col-sm-3 col-xs-3  card " style="background-color:#ad1f24;">
+            <div class="card-body text-center">
+          <div class="row">
+            <div class="col-md-12 ">
+            <p class="card-text fa fa-clock-o">  متأخر</p>
+          </div>
+          <div class="col-md-12 " style="background-color:white;  border: 1px solid #ad1f24;  border-radius: 2%; box-shadow:1px 1px black;" >
+            <h2  class="show">  عرض المشاريع &larr;</h2>
+             <div class="col-md-12 ">
+          </div>
+        </div>
+      </div>
+      </div>
+        </div>
+        <!--Fourth Card-->
+        <div class="col-md-3 col-ms-3 col-sm-3 col-xs-3  card " style="background-color:#1765f7e0;">
+            <div class="card-body text-center">
+          <div class="row">
+            <div class="col-md-12 ">
+            <p class="card-text fa fa-tasks">  حسب البرنامج</p>
+          </div>
+          <div class="col-md-12 " style="background-color:white;  border: 1px solid #1765f7e0;  border-radius: 2%; box-shadow:1px 1px black;" >
+            <h2 class="show">  عرض المشاريع &larr;</h2>
+             <div class="col-md-12 ">
+          </div>
+        </div>
+      </div>
+      </div>
+        </div>  </div>
+
+      </div>
+
+
+      <div class="box">
+          <div class="box-header ">
+            <h3  class="box-title">قائمة المشاريع</h3>
+            <a [routerLink]="['/project/create-project']" >
+              <button class="btn  pull-right" id="btnAdd">إنشاء مشروع</button>
+            </a>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body e">
+            <table id="projectDataTable" class="table direction table-striped">
+              <thead>
+              <tr>
+                  <th> رقم العقد</th>
+                  <th>اسم المشروع</th>
+                  <th> اسم الاستشاري</th>
+                  <th>اسم المقاول</th>
+                  <th>الحالة</th>
+                  <th>التحكم</th>
+           </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let project of projectsList">
+                    <td>{{project.id}}</td> 
+                    <td>{{project.name}}</td>
+                    <td>{{project.Consultant}}</td>
+                    <td>{{project.Contractor}}</td>
+                    <td>Active</td>
+                    <td>
+                        
+                          <div class="dropdown row">
+                            <a class="fa fa-tachometer" [routerLink]="['/reports/js-reports']" data-toggle="tooltip" data-placement="top" title="المنصة التفاعلية">
+                             
+                            </a>
+                             &nbsp;
+                            <a  data-toggle="tooltip" data-placement="top" title="تعديل المشروع">
+                              <i class="fa fa-pencil " ></i>
+                            </a>
+                           
+                            <a  class = "bars fa fa-bars"[routerLink]="['/request-for-inspection']" data-toggle="tooltip" data-placement="top" title="طلبات فحص الأعمال">
+                              
+                            </a>
+                            &nbsp;
+                           <a class="caret fa fa-caret" data-toggle="dropdown" data-placement="top" >
+                               
+                              </a>
+                               
+                              <ul class="dropdown-menu" role="menu">
+                                  <li class="dropdown-item"><a routerLink="/request-for-inspection">تعديل المشروع</a></li>
+                                <li class="divider"></li>
+                                <li class="dropdown-item"><a routerLink="/request-for-inspection">إدارة الملفات</a></li>
+                                <li class="divider"></li>
+                                <li class="dropdown-item"><a routerLink="/request-for-inspection">إدارة جدول الخطوط</a></li>
+                                <li class="divider"></li>
+                                <li class="dropdown-item"><a (click)="gotoTblQty(project)">إدارة جدول الكميات </a></li>
+                                     <li class="divider"></li>
+                                 <li class="dropdown-item"><a (click)="gotoRFI(project)">طلب فحص الأعمال</a></li>
+                                  <li class="divider"></li><li class="dropdown-item"><a routerLink="/request-for-inspection">طلبات تسليم مواد</a></li>
+                                <li class="divider"></li>
+                                <li class="dropdown-item"><a routerLink="/request-for-inspection">عوائق المشروع</a></li>
+                                <li class="divider"></li>
+                                <li class="dropdown-item"><a routerLink="/request-for-inspection">طلبات فتح المواقع </a></li>
+                                <li class="divider"></li>
+                                <li class="dropdown-item"><a routerLink="/request-for-inspection">التقرير الشهري  </a></li>
+                                <li class="divider"></li>
+                                <li class="dropdown-item"><a routerLink="/request-for-inspection">التدفق المالي</a></li>
+                                <li class="divider"></li>
+                                <li class="dropdown-item"><a routerLink="/request-for-inspection">المستلخصات الحالية</a></li>
+                                <li class="divider"></li>
+                                <li class="dropdown-item"><a routerLink="/request-for-inspection">المستلخصات</a></li>
+                                <li class="divider"></li>
+                                <li class="dropdown-item"><a routerLink="/request-for-inspection">سجل التنسيقات</a></li>
+                                <li class="divider"></li>
+                                <li class="dropdown-item"><a routerLink="/request-for-inspection">عرض خريطة الموقع </a></li>
+                              </ul>
+                            </div>
+                          
+                      </td>
+                     
+                   </tr>
+              </tbody>
+             
+            </table>
+          </div>
+         </div>
+    </section>
+        <!--Ending-->
+      <!--Second Section-->
+    
+         
+     
